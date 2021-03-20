@@ -1,7 +1,7 @@
 The PyCorder
 ============
 
-A credit-card-sized, SAMD51-based gadget for sensing, storing and showing data.
+A credit-card-sized, SAM D51-based gadget for sensing, storing and showing data.
 
 [PCB](https://oshpark.com/shared_projects/LN7RGg9E) | [BOM](https://octopart.com/bom-tool/ggGZZjZ3) | [UPDATES](https://twitter.com/josecastillo)
 
@@ -26,7 +26,7 @@ Building your own PyCorder
 
 You will need to [order the PCB's from someplace like OSH Park](https://oshpark.com/shared_projects/LN7RGg9E) (I recommend getting it in After Dark), and purchase all the parts on the [PyCorder Bill of Materials](https://octopart.com/bom-tool/ggGZZjZ3).
 
-The board is hand-solderable, but a word of warning: **this is a relatively advanced build**. Almost all of the passive components are 0603 in size, which is at the limit of hand-solderability for many folks. A fine-tipped soldering iron is a must.
+The board is hand-solderable, but a word of warning: **this is a relatively advanced build**. The SAM D51 microcontroller is a QFN part, which is best soldered with a hot air reflow station. Aside from that, almost all of the passive components are 0603 in size, which is at the limit of hand-solderability for many folks. A [fine tip](https://www.adafruit.com/product/1249) for your soldering iron is a must, and a [syringe of flux](https://www.adafruit.com/product/2667) couldn't hurt.
 
 Pin definitions
 ---------------
@@ -70,7 +70,7 @@ Burning the bootloader
 
 You will burn the bootloader over the SWD interface. These pins are available as exposed test points on the right side of the back of the board. To connect to them, you can solder directly to the pads, or use pogo pins; they are 0.1 inch pitch, so you can make a compatible cable using [a 5x1 wire housing](https://www.adafruit.com/product/3145), [raw jumper wires](https://www.adafruit.com/product/3633) and [some pogo pins](https://www.adafruit.com/product/2429).
 
-For convenience, a prebuilt bootloader is available in this repository. You can burn it bootloader using any SWD debugging tool like a J-Link or Atmel-ICE, but you can also use an Adafruit Trinket or PyRuler and the [Adafruit_DAP](https://github.com/adafruit/Adafruit_DAP) library.
+For convenience, a prebuilt bootloader is available in this repository. You can burn the bootloader using any SWD debugging tool like a J-Link or Atmel-ICE, but you can also use an [Adafruit Trinket M0](https://www.adafruit.com/product/3500) or [PyRuler](https://www.adafruit.com/product/4319) and the [Adafruit_DAP](https://github.com/adafruit/Adafruit_DAP) library.
 
 You can also build the bootloader from scratch by copying the `bootloader/pycorder_m4` directory to the `boards` directory of [uf2-samdx1](https://github.com/adafruit/uf2-samdx1) and typing `make BOARD=pycorder_m4`.
 
@@ -81,7 +81,7 @@ A CircuitPython UF2 is not included in this repository, because it's probably be
 
 Navigate to the `ports/atmel-samd` folder in your terminal and type `make BOARD=pycorder_m4`. This will generate a UF2 that you can drag to the PYCOBOOT drive.
 
-Note that the CircuitPython build does not currently enable the display by default. You will have to paste some code like this at the beginning of your `code.py` to get the display working:
+Note that the CircuitPython build does not currently drive the display by default. Whether you intend to display console output or your own UI, you will have to paste some code like this at the beginning of your `code.py` to get the display working:
 
 ```
 import busio
