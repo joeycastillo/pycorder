@@ -3,7 +3,7 @@ The PyCorder
 
 A credit-card-sized, SAMD51-based gadget for sensing, storing and showing data.
 
-[PCB](https://oshpark.com/shared_projects/LN7RGg9E) | [BOM](https://octopart.com/bom-tool/ggGZZjZ3) | [UPDATES](https://twitter.com/josecastillo)
+PCB (new link soon)) | [BOM](https://octopart.com/bom-tool/ggGZZjZ3) | [UPDATES](https://twitter.com/josecastillo)
 
 Features
 --------
@@ -24,7 +24,7 @@ Features
 Building your own PyCorder
 --------------------------
 
-You will need to [order the PCB's from someplace like OSH Park](https://oshpark.com/shared_projects/LN7RGg9E) (I recommend getting it in After Dark), and purchase all the parts on the [PyCorder Bill of Materials](https://octopart.com/bom-tool/ggGZZjZ3).
+You will need to order the PCB's from someplace like OSH Park (I recommend getting it in After Dark), and purchase all the parts on the [PyCorder Bill of Materials](https://octopart.com/bom-tool/ggGZZjZ3).
 
 The board is hand-solderable, but a word of warning: **this is a relatively advanced build**. Almost all of the passive components are 0603 in size, which is at the limit of hand-solderability for many folks. A fine-tipped soldering iron is a must.
 
